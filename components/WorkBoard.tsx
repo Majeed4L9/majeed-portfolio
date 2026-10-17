@@ -200,7 +200,7 @@ export default function WorkBoard() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 items-start gap-8 min-[901px]:grid-cols-3 min-[901px]:gap-5">
+      <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-3 lg:gap-5">
         {columns.map((col) => (
           <div
             key={col.status}
