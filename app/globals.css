@@ -213,3 +213,10 @@ kbd { font: 500 .72rem var(--font-mono); border: 1px solid var(--line-strong); b
   * { transition: none !important; }
   .col.is-run .col-h .dot { animation: none; }
 }
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 7px transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-dot { animation: none !important; }
+}
