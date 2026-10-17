@@ -56,7 +56,7 @@ export default function Ask() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 items-start gap-[clamp(28px,5vw,72px)] min-[901px]:grid-cols-[1.25fr_1fr]">
+      <div className="grid grid-cols-1 items-start gap-[clamp(28px,5vw,72px)] lg:grid-cols-[1.25fr_1fr]">
         <div className="grid max-w-[62ch] gap-4">
           <p className="text-[1.12rem] leading-[1.55] text-[var(--fg)]">
             Neither of my current roles puts me next to a senior product
@@ -107,7 +107,7 @@ export default function Ask() {
         >
           Questions I&apos;d bring on day one
         </p>
-        <div className="grid grid-cols-1 gap-x-[clamp(20px,3vw,40px)] border-t border-[var(--line)] min-[901px]:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-[clamp(20px,3vw,40px)] border-t border-[var(--line)] lg:grid-cols-3">
           {questions.map((q) => (
             <div key={q.title} className="grid content-start gap-1.5 py-5">
               <h3 className="text-base font-semibold tracking-[-0.01em]">
