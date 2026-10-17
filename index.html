@@ -1,0 +1,532 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Majeed Raji</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: name and application first, then who I am, my work as a three-column board, the fit against the listing, why I want to learn at Fredrin, contact. Neutral, monochrome, pill buttons and mono labels, in line with Fredrin's own site. Dark-first. */
+:root {
+  --bg: #0c0d0f;
+  --surface: #141517;
+  --surface-2: #1a1b1e;
+  --line: #26282c;
+  --line-strong: #3a3d43;
+  --fg: #ececee;
+  --muted: #9a9ea6;
+  --run: #6aa6ff;
+  --done: #4fcf98;
+  --back: #8a8f98;
+  --focus: #8ab4ff;
+  --font-display: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f4f4f6;
+    --line: #e6e7ea;
+    --line-strong: #cfd1d6;
+    --fg: #0f1012;
+    --muted: #5f636b;
+    --run: #1f5fcc;
+    --done: #14724b;
+    --back: #5f6670;
+    --focus: #1f5fcc;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f4f4f6;
+  --line: #e6e7ea;
+  --line-strong: #cfd1d6;
+  --fg: #0f1012;
+  --muted: #5f636b;
+  --run: #1f5fcc;
+  --done: #14724b;
+  --back: #5f6670;
+  --focus: #1f5fcc;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  padding-block: 20px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 1rem/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1160px; margin-inline: auto; }
+h1, h2, h3, h4, p, ul, dl, dd { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; }
+p { text-wrap: pretty; }
+a { color: var(--fg); text-decoration-color: var(--line-strong); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-color: var(--fg); }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+
+/* Header: a path that mirrors Fredrin's own careers breadcrumb */
+.top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 16px; }
+.crumb { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; font: 400 .8rem var(--font-mono); color: var(--muted); min-width: 0; }
+.crumb a { color: var(--muted); text-decoration: none; }
+.crumb a:hover { color: var(--fg); }
+.crumb .sep { color: var(--line-strong); }
+.crumb .here { color: var(--fg); }
+.crumb .live { width: 7px; height: 7px; border-radius: 50%; background: var(--done); flex: none; margin-right: 2px; }
+.nav { display: flex; align-items: center; gap: 22px; }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: .92rem; }
+.nav-links a:hover { color: var(--fg); }
+.tbtn { font: 500 .75rem var(--font-mono); letter-spacing: .02em; color: var(--muted); background: transparent; border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 12px; cursor: pointer; }
+.tbtn:hover { color: var(--fg); border-color: var(--muted); }
+
+/* Sections */
+.sec { padding-top: clamp(64px, 10vw, 112px); }
+.sec-h { display: grid; gap: 10px; margin-bottom: 28px; }
+.sec-h h2 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); line-height: 1.1; font-weight: 600; letter-spacing: -0.035em; }
+.sec-h p { color: var(--muted); max-width: 66ch; }
+.eyebrow { font: 500 .72rem var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+/* Hero */
+.hero { padding-top: clamp(44px, 8vw, 92px); display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: end; }
+.hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: 1; font-weight: 600; letter-spacing: -0.05em; }
+.hero-eyebrow { margin-bottom: 18px; }
+.tagline { margin-top: 16px; font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.3; letter-spacing: -0.02em; color: var(--muted); max-width: 30ch; }
+.lede { margin-top: 22px; font-size: 1.12rem; color: var(--muted); max-width: 54ch; }
+.lede strong { color: var(--fg); font-weight: 500; }
+.cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; padding: 11px 20px; border-radius: 999px; font: 500 .95rem var(--font-body); text-decoration: none; border: 1px solid var(--line-strong); color: var(--fg); }
+.btn:hover { border-color: var(--muted); }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn.primary:hover { opacity: .88; }
+
+.card { background: var(--surface-2); border: 1px solid var(--line); border-radius: 20px; }
+.app-ticket { padding: 22px; display: grid; gap: 16px; min-width: 0; }
+.tk-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tk-id { font: 500 .78rem var(--font-mono); color: var(--muted); }
+.tk-title { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; }
+.tk-sub { color: var(--muted); font-size: .92rem; margin-top: 4px; }
+.kv { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 9px 18px; font-size: .92rem; padding-top: 16px; border-top: 1px solid var(--line); }
+.kv dt { font: 400 .74rem var(--font-mono); color: var(--muted); letter-spacing: .03em; padding-top: 3px; }
+.kv dd { overflow-wrap: anywhere; }
+
+/* Pills and dots, one status language across the page */
+.is-run { --c: var(--run); }
+.is-done { --c: var(--done); }
+.is-back { --c: var(--back); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 500 .7rem/1 var(--font-mono); letter-spacing: .05em; text-transform: uppercase; padding: 5px 9px; border-radius: 999px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); border: 1px solid color-mix(in srgb, var(--c) 32%, transparent); white-space: nowrap; }
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--c); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--c); flex: none; }
+
+/* Prose blocks */
+.prose { display: grid; gap: 16px; max-width: 62ch; }
+.prose p { color: var(--muted); }
+.prose p:first-child { color: var(--fg); font-size: 1.12rem; line-height: 1.55; }
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); }
+.facts { display: grid; grid-template-columns: 112px minmax(0, 1fr); font-size: .92rem; align-content: start; }
+.facts dt, .facts dd { padding-block: 12px; border-top: 1px solid var(--line); }
+.facts dt { font: 400 .74rem var(--font-mono); color: var(--muted); letter-spacing: .03em; padding-top: 14px; }
+.facts dd { overflow-wrap: anywhere; }
+.facts dd small { display: block; color: var(--muted); font-size: .84rem; margin-top: 2px; }
+.facts dt:last-of-type, .facts dd:last-of-type { border-bottom: 1px solid var(--line); }
+
+/* Board */
+.board { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.col { min-width: 0; display: grid; gap: 12px; }
+.col-h { display: flex; align-items: center; gap: 9px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.col-h h3 { font: 600 .95rem var(--font-body); letter-spacing: -0.01em; }
+.col-h .n { margin-left: auto; font: 500 .76rem var(--font-mono); color: var(--muted); }
+.col.is-run .col-h .dot { animation: pulse 2.2s ease-out infinite; }
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--c) 55%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 7px transparent; }
+}
+.col-body { display: grid; gap: 12px; }
+.ticket { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 10px; min-width: 0; transition: border-color .15s ease; }
+.ticket:hover { border-color: var(--line-strong); }
+.ticket.is-back { background: transparent; border-style: dashed; border-color: var(--line-strong); }
+.t-meta { display: flex; justify-content: space-between; gap: 10px; font: 400 .72rem var(--font-mono); color: var(--muted); }
+.t-title { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.015em; line-height: 1.25; }
+.t-role { font-size: .86rem; color: var(--muted); margin-top: -6px; }
+.t-desc { font-size: .92rem; color: var(--muted); line-height: 1.55; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li { font: 400 .7rem var(--font-mono); color: var(--muted); border: 1px solid var(--line); border-radius: 6px; padding: 3px 7px; }
+.t-link { font-size: .86rem; font-weight: 500; justify-self: start; }
+
+/* Fit against the listing */
+.fit { border-top: 1px solid var(--line); }
+.fit-row { display: grid; grid-template-columns: minmax(0, 1fr) 118px minmax(0, 1.5fr); gap: 8px clamp(16px, 3vw, 40px); padding-block: 22px; border-bottom: 1px solid var(--line); align-items: start; }
+.fit-req { font-weight: 500; letter-spacing: -0.005em; }
+.fit-ev { color: var(--muted); font-size: .95rem; }
+.fit-st { padding-top: 2px; }
+
+/* Why Fredrin */
+.ask { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.panel { padding: 22px; display: grid; }
+.panel .eyebrow { margin-bottom: 4px; }
+.give li { padding-block: 14px; border-top: 1px solid var(--line); display: grid; gap: 2px; }
+.panel .eyebrow + .give li:first-child { border-top: 0; }
+.give strong { font-weight: 600; letter-spacing: -0.01em; }
+.give span { color: var(--muted); font-size: .92rem; }
+.qs { margin-top: clamp(36px, 6vw, 56px); display: grid; gap: 14px; }
+.q-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 clamp(20px, 3vw, 40px); border-top: 1px solid var(--line); }
+.q { padding-block: 20px; display: grid; gap: 6px; align-content: start; }
+.q h3 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+.q p { color: var(--muted); font-size: .92rem; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: 132px minmax(0, 1fr); border-top: 1px solid var(--line); }
+.contact dt, .contact dd { padding-block: 16px; border-bottom: 1px solid var(--line); }
+.contact dt { font: 400 .76rem var(--font-mono); color: var(--muted); letter-spacing: .03em; padding-top: 19px; }
+.contact dd { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; overflow-wrap: anywhere; min-width: 0; }
+.copy { font: 500 .74rem var(--font-mono); color: var(--muted); background: transparent; border: 1px solid var(--line-strong); border-radius: 999px; padding: 5px 11px; cursor: pointer; }
+.copy:hover { color: var(--fg); border-color: var(--muted); }
+.note { font-size: .84rem; color: var(--muted); }
+
+.foot { margin-top: clamp(64px, 10vw, 104px); padding-top: 20px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font: 400 .76rem var(--font-mono); color: var(--muted); }
+.foot a { color: var(--muted); }
+kbd { font: 500 .72rem var(--font-mono); border: 1px solid var(--line-strong); border-radius: 5px; padding: 1px 6px; color: var(--fg); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero, .about, .ask { grid-template-columns: minmax(0, 1fr); }
+  .hero { align-items: start; }
+  .board { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .q-grid { grid-template-columns: minmax(0, 1fr); }
+  .fit-row { grid-template-columns: minmax(0, 1fr); }
+  .fit-st { order: -1; }
+}
+@media (max-width: 700px) {
+  .nav-links { display: none; }
+}
+@media (max-width: 620px) {
+  .facts { grid-template-columns: 96px minmax(0, 1fr); }
+  .contact { grid-template-columns: 88px minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .col.is-run .col-h .dot { animation: none; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <i class="live" aria-hidden="true"></i>
+      <a href="https://www.fredrin.com/careers" target="_blank" rel="noopener">careers</a>
+      <span class="sep">/</span>
+      <a href="https://www.fredrin.com/careers/ui-ux-designer" target="_blank" rel="noopener">ui-ux-designer</a>
+      <span class="sep">/</span>
+      <a class="here" href="#top">majeed-raji</a>
+    </nav>
+    <nav class="nav" aria-label="Page sections">
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#fit">Fit</a>
+        <a href="#ask">Why Fredrin</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="tbtn" id="theme" type="button">Light</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="h1">
+      <div>
+        <p class="eyebrow hero-eyebrow">Product designer · Nigeria</p>
+        <h1 id="h1">Majeed Raji</h1>
+        <p class="tagline">I design calm interfaces for complicated things.</p>
+        <p class="lede">I'm applying for a <strong>junior role</strong> at Fredrin, alongside the experienced designer you're hiring. Your listing stands as written, and I'm not competing with the senior applicants. I'm going the extra mile in case there's room for someone earlier in their career.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn" href="#ask">Why I want to join</a>
+        </div>
+      </div>
+
+      <aside class="card app-ticket" aria-label="Application summary">
+        <div class="tk-top">
+          <span class="tk-id">UX-0001</span>
+          <span class="pill is-run">Applying</span>
+        </div>
+        <div>
+          <h2 class="tk-title">Junior designer</h2>
+          <p class="tk-sub">Fredrin · Remote</p>
+        </div>
+        <dl class="kv">
+          <dt>Applicant</dt><dd>Majeed Raji</dd>
+          <dt>Time zone</dt><dd>West Africa Time, UTC+1</dd>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="sec" id="about" aria-labelledby="about-h">
+      <div class="sec-h">
+        <h2 id="about-h">Who I am</h2>
+      </div>
+      <div class="about">
+        <div class="prose">
+          <p>I'm a product designer for mobile and web. I like the moment a tangled problem becomes clear on screen.</p>
+          <p>I learned design through a UI/UX course, guided projects and design challenges.</p>
+          <p>Outside work I listen to almost everything, from Afrobeats to soul to Latin pop, and I follow a lot of series.</p>
+        </div>
+        <dl class="facts">
+          <dt>Education</dt><dd>B.Sc. Computer Science, First Class Honours<small>CGPA 4.6/5.0, Adekunle Ajasin University, 2021 to 2025</small></dd>
+          <dt>Award</dt><dd>1st place, Global AI Design Challenge<small>Among 100+ participants, for Triply, an adaptive mobile field-trip planner for schools with real-time coordination and offline support, designed with Moonchild AI.</small></dd>
+          <dt>Languages</dt><dd>English (fluent), Yoruba (native), Spanish (beginner)</dd>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec" id="work" aria-labelledby="work-h">
+      <div class="sec-h">
+        <h2 id="work-h">What I've worked on</h2>
+        <p>Completed holds my three case studies: finished projects that show how I think. Running is my current work. Backlog is what I want to learn next.</p>
+      </div>
+
+      <div class="board">
+        <div class="col is-done">
+          <div class="col-h"><i class="dot"></i><h3>Completed</h3><span class="n">3</span></div>
+          <div class="col-body">
+            <article class="ticket">
+              <div class="t-meta"><span>MR-0001</span><span>2026 · about 2 weeks</span></div>
+              <h4 class="t-title">Marlowe</h4>
+              <p class="t-role">LegalTech · AI-native workspace for law firms</p>
+              <p class="t-desc">Designed an AI workspace concept for law firms, built on a workflow mapped to real litigation stages, with evidence tied to the claims it supports.</p>
+              <ul class="tags"><li>Research</li><li>Wireframes</li><li>High fidelity</li><li>Prototype</li></ul>
+              <a class="t-link" href="https://majeedraji.com/marlowe/" target="_blank" rel="noopener">Read the case study ↗</a>
+            </article>
+            <article class="ticket">
+              <div class="t-meta"><span>MR-0002</span><span>2026 · about 3 weeks</span></div>
+              <h4 class="t-title">VeloGaming</h4>
+              <p class="t-role">iGaming · Verification-first discovery platform</p>
+              <p class="t-desc">Designed a verification-first iGaming platform concept built on a Discover, Compare, Verify, Choose framework and an inspectable trust score, with optional AI personalization.</p>
+              <ul class="tags"><li>Product strategy</li><li>Responsive</li><li>Prototype</li></ul>
+              <a class="t-link" href="https://majeedraji.com/velogaming/" target="_blank" rel="noopener">Read the case study ↗</a>
+            </article>
+            <article class="ticket">
+              <div class="t-meta"><span>MR-0003</span><span>2025</span></div>
+              <h4 class="t-title">ShopEase</h4>
+              <p class="t-role">E-commerce · Global shopping app</p>
+              <p class="t-desc">Designed interactive prototypes for a global shopping app centered on simplicity and speed, with streamlined discovery and checkout.</p>
+              <ul class="tags"><li>Mobile</li><li>Survey</li><li>Prototype</li></ul>
+              <a class="t-link" href="https://majeedraji.com/work/shopease/" target="_blank" rel="noopener">Read the case study ↗</a>
+            </article>
+          </div>
+        </div>
+
+        <div class="col is-run">
+          <div class="col-h"><i class="dot"></i><h3>Running</h3><span class="n">2</span></div>
+          <div class="col-body">
+            <article class="ticket">
+              <div class="t-meta"><span>MR-0004</span><span>Feb 2026 to now</span></div>
+              <h4 class="t-title">Wyze</h4>
+              <p class="t-role">UX/UI Designer, long-term freelance contract</p>
+              <p class="t-desc">Redesigned a live e-commerce app, and the founding team praised the new direction. Designed a restaurant POS with oversized buttons and quantity steppers to cut tap errors on busy shifts. Delivered high-fidelity designs for a B2B finance app and a dating app.</p>
+              <ul class="tags"><li>Mobile</li><li>E-commerce</li><li>POS</li><li>B2B finance</li></ul>
+            </article>
+            <article class="ticket">
+              <div class="t-meta"><span>MR-0005</span><span>Aug 2025 to now</span></div>
+              <h4 class="t-title">Avaye Ocean</h4>
+              <p class="t-role">Product and Graphic Designer</p>
+              <p class="t-desc">Supporting web and mobile product work across three brands, with designers, product managers, marketers and developers. I also design campaign graphics and educational carousels.</p>
+              <ul class="tags"><li>Web</li><li>Mobile</li><li>Brand</li></ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="col is-back">
+          <div class="col-h"><i class="dot"></i><h3>Backlog</h3><span class="n">4</span></div>
+          <div class="col-body">
+            <article class="ticket is-back">
+              <div class="t-meta"><span>MR-0006</span><span>Next</span></div>
+              <h4 class="t-title">Testing with real users</h4>
+              <p class="t-desc">My case studies have not been tested. I want to run usability tests and learn from what people actually do.</p>
+            </article>
+            <article class="ticket is-back">
+              <div class="t-meta"><span>MR-0007</span><span>Next</span></div>
+              <h4 class="t-title">Dense interfaces for developers</h4>
+              <p class="t-desc">I want to design a surface that people live in all day, such as a board of agents.</p>
+            </article>
+            <article class="ticket is-back">
+              <div class="t-meta"><span>MR-0008</span><span>Next</span></div>
+              <h4 class="t-title">Designing against real builds</h4>
+              <p class="t-desc">Iterating with engineers on running software, not only on prototypes.</p>
+            </article>
+            <article class="ticket is-back">
+              <div class="t-meta"><span>MR-0009</span><span>Next</span></div>
+              <h4 class="t-title">Motion and interaction craft</h4>
+              <p class="t-desc">Timing, feedback and state changes that keep a busy screen calm.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="fit" aria-labelledby="fit-h">
+      <div class="sec-h">
+        <h2 id="fit-h">Against the listing</h2>
+        <p>Here is where I stand on each line of your listing.</p>
+      </div>
+      <div class="fit" role="list">
+        <div class="fit-row" role="listitem">
+          <p class="fit-req">Shipped product design work, ideally developer tools or dense interfaces.</p>
+          <div class="fit-st"><span class="pill is-back">Not yet</span></div>
+          <p class="fit-ev">I haven't owned a product through to launch. My case studies were never built, and my paid work has been on other people's products.</p>
+        </div>
+        <div class="fit-row" role="listitem">
+          <p class="fit-req">Fluency in modern design tooling, with enough front-end literacy to speak precisely with engineers.</p>
+          <div class="fit-st"><span class="pill is-run">Building it</span></div>
+          <p class="fit-ev">I work in Figma and FigJam every day. My front-end skills stop at basic HTML and CSS, and that is the part I'm building.</p>
+        </div>
+        <div class="fit-row" role="listitem">
+          <p class="fit-req">Strong opinions about typography, spacing and restraint, and the taste to defend them.</p>
+          <div class="fit-st"><span class="pill is-run">Building it</span></div>
+          <p class="fit-ev">My case studies show where I stand on restraint: one question per screen in Marlowe, and fixed color roles in VeloGaming. I'd love to learn how to defend those choices against a more experienced designer.</p>
+        </div>
+        <div class="fit-row" role="listitem">
+          <p class="fit-req">Attention to empty states, error states and edge cases.</p>
+          <div class="fit-st"><span class="pill is-run">Building it</span></div>
+          <p class="fit-ev">ShopEase has a designed empty wishlist. VeloGaming has skippable onboarding and a setting that wipes the AI profile. Marlowe flags a finished stage when new evidence affects it, instead of silently reopening it. Error states are what I most want to practice.</p>
+        </div>
+        <div class="fit-row" role="listitem">
+          <p class="fit-req">Written-first, async, remote work.</p>
+          <div class="fit-st"><span class="pill is-done">Have it</span></div>
+          <p class="fit-ev">I already work fully remotely, and I write up each project from the problem to the final screens.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="ask" aria-labelledby="ask-h">
+      <div class="sec-h">
+        <h2 id="ask-h">Why I want to learn at Fredrin</h2>
+      </div>
+      <div class="ask">
+        <div class="prose">
+          <p>Neither of my current roles puts me next to a senior product designer day to day. I want to be taught properly: to see how an experienced designer makes decisions, to get honest feedback on my work, and to grow toward owning whole problems, as your listing describes.</p>
+          <p>Making twenty agents feel as calm as one is the kind of problem I want to spend my time on.</p>
+        </div>
+        <aside class="card panel" aria-labelledby="give-h">
+          <p class="eyebrow" id="give-h">What I'd bring</p>
+          <ul class="give">
+            <li><strong>Self-directed work.</strong><span>Give me a problem and I'll take it from research to a clickable prototype on my own, and ask when I'm stuck.</span></li>
+            <li><strong>A user's view of AI tools.</strong><span>I use Claude, ChatGPT and Lovable daily, so I quickly notice where an AI tool is hard to steer or hides what it is doing.</span></li>
+            <li><strong>Easy conversations with engineers.</strong><span>I ask early what is feasible, and my computer science background helps me follow the answer.</span></li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="qs">
+        <p class="eyebrow">Questions I'd bring on day one</p>
+        <div class="q-grid">
+          <div class="q">
+            <h3>Which card do I open first?</h3>
+            <p>Twenty running tickets is a priority problem before it is a layout problem. In Marlowe I learned that the nearest deadline is not always the most urgent item. What is the right signal on a board of agents?</p>
+          </div>
+          <div class="q">
+            <h3>What does a blocked agent need?</h3>
+            <p>How fast can someone see that an autonomous cloud agent is stuck or blocked, and exactly what context it needs to resume? I want to master these interactive workflows before attempting to design them.</p>
+          </div>
+          <div class="q">
+            <h3>How do you review fast work?</h3>
+            <p>Marlowe taught me that people trust AI output when they can check it. I'd like to learn what checking looks like for a pull request diff that an agent wrote in its own worktree.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="contact" aria-labelledby="contact-h">
+      <div class="sec-h">
+        <h2 id="contact-h">How to reach me</h2>
+        <p>Email is best. I'm happy to work async.</p>
+      </div>
+      <dl class="contact">
+        <dt>Email</dt>
+        <dd><span id="email">rajimajeed07@gmail.com</span><button class="copy" id="copy" type="button">Copy</button><span class="note" id="copy-status" role="status" aria-live="polite"></span></dd>
+        <dt>Portfolio</dt>
+        <dd><a href="https://majeedraji.com" target="_blank" rel="noopener">majeedraji.com</a></dd>
+        <dt>Resume</dt>
+        <dd><a href="https://drive.google.com/file/d/1FXV-KHeqebsa6B27Nc4jt3pGyp_StzPH/view?usp=drive_link" target="_blank" rel="noopener">View the PDF on Google Drive ↗</a></dd>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/majeed-raji-bb2148226" target="_blank" rel="noopener">linkedin.com/in/majeed-raji-bb2148226</a></dd>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>Written for the Fredrin UI/UX designer listing, October 2026</span>
+    <span>Press <kbd>T</kbd> to switch theme · <a href="#top">Back to top</a></span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('theme');
+
+  function current() {
+    var t = root.getAttribute('data-theme');
+    if (t === 'light' || t === 'dark') return t;
+    return (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+  }
+  function label() { btn.textContent = current() === 'dark' ? 'Light' : 'Dark'; }
+  function toggle() {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('mr-theme', next); } catch (e) {}
+    label();
+  }
+
+  try {
+    var saved = localStorage.getItem('mr-theme');
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+  } catch (e) {}
+  label();
+
+  btn.addEventListener('click', toggle);
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
+    if (e.key === 't' || e.key === 'T') toggle();
+  });
+
+  var copy = document.getElementById('copy');
+  var email = document.getElementById('email');
+  var status = document.getElementById('copy-status');
+  var timer;
+
+  function say(msg) {
+    status.textContent = msg;
+    clearTimeout(timer);
+    timer = setTimeout(function () { status.textContent = ''; }, 2400);
+  }
+  function selectEmail() {
+    var range = document.createRange();
+    range.selectNodeContents(email);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    say('Selected. Copy it with your keyboard.');
+  }
+
+  copy.addEventListener('click', function () {
+    var text = email.textContent.trim();
+    try {
+      navigator.clipboard.writeText(text).then(function () { say('Copied'); }, selectEmail);
+    } catch (e) {
+      selectEmail();
+    }
+  });
+})();
+</script>
